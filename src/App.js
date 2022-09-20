@@ -10,7 +10,9 @@ import SignUp from './components/auth/signup'
 // import UserProfile from './components/pages/userProfile'
 import User from './components/user/index.js'
 import Home from './components/pages/home.js'
+import HomePage from './components/pages/homePage.js'
 import UserProfile from './components/pages/userProfile.js'
+import Profile from './components/pages/profile'
 
 function App() {
   return (
@@ -39,13 +41,18 @@ function App() {
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link className="nav-link" to={'/homepage'}>
+                     Home page
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to={'/userProfile'}>
                      Profile
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to={'/userForm'}>
-                     Courses 
+                  userForm 
                   </Link>
                 </li>
               </ul>
@@ -58,16 +65,12 @@ function App() {
               <Route exact path="/" element={<Login />} />
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/userProfile" element={<User />} />
+              <Route path="/userProfile" element={<Profile />} />
               <Route path="/home" element={<Home/>} />
-              <Route path="/userForm" element={<UserProfile />} />
+              <Route path="/userForm" element={<User />} />
+              <Route path="/homepage" element={<HomePage />} />
             </Routes>
           </div>
-          {/* <div className='user-profile'>
-            <Routes>
-            <Route path="/userProfile" element={<UserProfile />} />
-            </Routes>
-          </div> */}
         </div>
       </div>
     </Router>

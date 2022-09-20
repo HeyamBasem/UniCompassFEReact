@@ -1,5 +1,6 @@
 // import { Dropdown } from 'bootstrap'
 import React, { Component } from 'react'
+import cForm from '../util/cForm2.png';
 
 export default class Home extends Component {
   constructor() {
@@ -41,15 +42,23 @@ export default class Home extends Component {
   };
   render() {
     return (
-        <div className="auth-inner">
+        <div className="auth-inner-homePage">
           {/* list of courses ,which smester  */}
           <form onSubmit={this.handleSubmit}>
-          <h3>Your Uni Compass</h3>
-          <h6>Fill ur semester courses</h6>
-         
-          <label>Semester Type :</label>
-          <div className="mb-3">
+          
+          <div className="homeformHeader">
+          <img src={cForm} alt="cForm.png" className="imgForFormHome" />
+              <br/><br/>
+              <h3><i>Your Uni Compass<br/>
+              <h6>Fill your semester courses</h6>
+              </i></h3>
+          </div>
+          <p></p>
+          <div className="my-mb-3">
+          <label> &#10043;Semester Type:</label>
+          <br/>
             <select 
+            className='myform-select'
             value={this.state.name}
             onChange={this.handleNameChange}>
               <option value="summer">Summer</option>
@@ -57,15 +66,16 @@ export default class Home extends Component {
               <option selected value="first">First</option>
             </select>
           </div>
-          <div className="mb-3">
-            <label>Total courses hours</label>
-            <input type="text" className="form-control" placeholder="9" />
+          <div className="my-mb-3">
+            <label>&#10043;Total courses hours:</label>
+            <input type="text" className="myform-control" placeholder="9" />
           </div>
-          <div className="mb-3">
-            <label>Courses</label>
+          <div className="my-mb-3">
+            <label>&#10043;Courses:</label>
             {this.state.shareholders.map((shareholder, idx) => (
           <div className="shareholder">
             <input
+              className='myform-control'
               type="text"
               placeholder={`Course #${idx + 1} name`}
               value={shareholder.name}
@@ -74,7 +84,7 @@ export default class Home extends Component {
             <button
               type="button"
               onClick={this.handleRemoveShareholder(idx)}
-              className="small"
+              className="homesmall"
             >
               -
             </button>
@@ -83,7 +93,7 @@ export default class Home extends Component {
         <button
           type="button"
           onClick={this.handleAddShareholder}
-          className="small"
+          className="mysmall"
         >
           Add Course
         </button>

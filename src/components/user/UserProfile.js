@@ -17,16 +17,17 @@ export default function EditableUserProfile({
 
     return <div>
         <Group>
-            <h2>Name:</h2> {stored.name}
+            <h5>Name:</h5> {stored.name}
         </Group>
         <Group>
-            <h2>Birthday:</h2> {months.getShortName(stored.month)} {stored.day}
+            <h5>Birthday:</h5> {months.getShortName(stored.month)} {stored.day}
         </Group>
         <Group>
-            <h2>Favourite Color:</h2> <ColorBox color={stored.color}/>
+            <h5>Favourite Color:</h5> <ColorBox color={stored.color}/>
         </Group>
         <Group>
             <button
+                className='profileButton'
                 style={buttonStyle}
                 onClick={startEditCallback}
             >Edit</button>
