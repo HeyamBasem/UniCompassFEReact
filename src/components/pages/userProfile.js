@@ -4,7 +4,7 @@ import cForm from '../util/cForm2.png';
 export default class UserProfile extends Component {
     render() {
         return (
-            <div className="auth-inner">
+            <div className="auth-inner-course">
             <form>
             <div className="formHeader">
             <img src={cForm} alt="cForm.png" className="imgForForm" />

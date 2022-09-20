@@ -2,10 +2,10 @@
 import React, { Component } from 'react'
 import cForm from '../util/cForm2.png';
 
-export default class About extends Component {
+export default class UserInfo extends Component {
   render() {
     return (
-        <div className="auth-inner-aboutPage">
+        <div className="auth-inner-userinfo">
           {/* list of courses ,which smester  */}
           <form>
           <div className="homeformHeader">

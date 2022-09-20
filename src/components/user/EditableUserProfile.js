@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Group from './Group';
-import { months, calcButtonTextColor } from '../util/tools';
+import { months } from '../util/tools';
 
 function renderMonthOptions() {
     return months.getMonths().map( (m, i) => {
@@ -27,7 +27,7 @@ export default function EditableUserProfile({
     const [name, setName] = useState(stored.name);
     const [month, setMonth] = useState(stored.month);
     const [day, setDay] = useState(stored.day);
-    const [color, setColor] = useState(stored.color);
+    // const [color, setColor] = useState(stored.color);
 
     const maxDay = months.getMaxDays(month);
 
@@ -37,7 +37,7 @@ export default function EditableUserProfile({
 
     function handleSaveClicked() {
         console.log("Saved");
-        editCompleteCallback({name, month, day, color});
+        editCompleteCallback({name, month, day});
     }
 
     useEffect(() => {
@@ -45,15 +45,15 @@ export default function EditableUserProfile({
     }, [month]);
 
     const buttonStyle = {
-        backgroundColor: color,
-        color: calcButtonTextColor(color)
+        // backgroundColor: color,
+        // color: calcButtonTextColor(color)
     };
 
-    calcButtonTextColor(color);
+    // calcButtonTextColor(color);
 
     return <>
         <Group>            
-            <h2>Name:</h2>
+            <h5>Name:</h5>
             <input
                 type='text'
                 value={name}
@@ -61,7 +61,7 @@ export default function EditableUserProfile({
             />            
         </Group>
         <Group>            
-            <h2>Birthday:</h2>            
+            <h5>Birthday:</h5>            
             
             <select
                 value={month}
@@ -76,14 +76,14 @@ export default function EditableUserProfile({
                 style={{width: "50px"}}
             />
         </Group>
-        <Group>            
+        {/* <Group>            
             <h2>Favourite Color:</h2>
             <input
                 type="color"
                 value={color}
                 onChange={e => setColor(e.target.value)}
             />
-        </Group>
+        </Group> */}
         <Group>
             <button style={buttonStyle} onClick={handleSaveClicked}>Save</button>
             <button style={buttonStyle} onClick={handleCancelClicked}>Cancel</button>

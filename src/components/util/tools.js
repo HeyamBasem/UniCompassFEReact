@@ -13,15 +13,15 @@ const monthsArray = [
     { shortName: "Dec", maxDays: 31}
 ];
 
-export function calcButtonTextColor(buttonColor) {
-    const r = parseInt(buttonColor.slice(1,3), 16);    
-    const g = parseInt(buttonColor.slice(3,5), 16);
-    const b = parseInt(buttonColor.slice(5,7), 16);
+// export function calcButtonTextColor(buttonColor) {
+//     const r = parseInt(buttonColor.slice(1,3), 16);    
+//     const g = parseInt(buttonColor.slice(3,5), 16);
+//     const b = parseInt(buttonColor.slice(5,7), 16);
     
-    return ( 0.3 * r + 0.6 * g + 0.1 * b) < 128
-        ? "#FFFFFF"
-        : "#000000";
-}
+//     return ( 0.3 * r + 0.6 * g + 0.1 * b) < 128
+//         ? "#FFFFFF"
+//         : "#000000";
+// }
 
 export const months = {
     getShortName: i => monthsArray[i].shortName,

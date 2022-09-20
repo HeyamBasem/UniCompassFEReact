@@ -52,6 +52,7 @@ function User() {
     }
 
     return (
+        <>
         <div className="container-user">
             <div className="user-profile">                 
                 {
@@ -76,8 +77,9 @@ function User() {
                         </>
                 }            
             </div>
-        </div>
-    );
+         </div> 
+        </>
+        );
 }
 
 export default User;
