@@ -8,10 +8,10 @@ import SignUp from './components/auth/signup'
 // import CoursesList from './components/pages/courses-list'
 // import Course from './components/pages/course'
 // import UserProfile from './components/pages/userProfile'
-import User from './components/user/index.js'
-import Home from './components/pages/home.js'
+// import User from './components/user/index.js'
+// import Home from './components/pages/home.js'
 import HomePage from './components/pages/homePage.js'
-import UserProfile from './components/pages/userProfile.js'
+// import UserProfile from './components/pages/userProfile.js'
 import Profile from './components/pages/profile'
 
 function App() {
@@ -36,13 +36,8 @@ function App() {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to={'/home'}>
-                     Home
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link className="nav-link" to={'/homepage'}>
-                     Home page
+                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -50,11 +45,11 @@ function App() {
                      Profile
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link className="nav-link" to={'/userForm'}>
                   userForm 
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -66,8 +61,8 @@ function App() {
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/userProfile" element={<Profile />} />
-              <Route path="/home" element={<Home/>} />
-              <Route path="/userForm" element={<User />} />
+              {/* <Route path="/home" element={<Home/>} /> */}
+              {/* <Route path="/userForm" element={<User />} /> */}
               <Route path="/homepage" element={<HomePage />} />
             </Routes>
           </div>

@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+// import * as ReactDOM from 'react-dom';
 import Home from './home'
+
+// import HomePreview from './homePreview'
 import About from './about'
 // import report from '../util/report.png';
 import pngwing from '../util/pngwing.com.png'
 
 
+// ReactDOM.render(<Search />, document.querySelector("#container"))
 export default class HomePage extends Component {
   render() {
     return (
@@ -22,7 +26,7 @@ export default class HomePage extends Component {
         </div>
           <div className='cardsContent' >
             <div className="auth-inner-home">
-            &#128171;How we are?
+            &#128171;About Us?
             </div>
             <div className="auth-inner-home">
             &#128171;Contact us.
@@ -33,6 +37,7 @@ export default class HomePage extends Component {
           </div>
           <div className='homecard'>
             <Home/>
+            {/* <HomePreview /> */}
           </div>
           <div className='aboutcard' >
             <About/>
