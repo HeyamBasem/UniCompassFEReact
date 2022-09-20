@@ -31,17 +31,105 @@ body, html, .App, #root, .auth-wrapper {
   width: 450px;
   margin: auto;
   background: #ffffff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  box-shadow: 0px 14px 80px rgba(1, 9, 24, 0.76);
   padding: 40px 55px 45px 55px;
   border-radius: 15px;
   transition: all .3s;
+}
+.auth-inner-homePage {
+  width: 450px;
+  margin: auto;
+  align-content: center;
+  background: #eba21a;
+  box-shadow: 0px 14px 80px rgba(1, 9, 24, 0.76);
+  padding: 40px 55px 45px 55px;
+  border-radius: 50px;
+  transition: all .3s;
+}
+.auth-inner-aboutPage {
+  width: 380px;
+  margin-right: 50px;
+  margin-top: -145px;
+  align-content: center;
+  background: #eba21a8a;
+  align-content: center;
+  box-shadow: 0px 14px 80px rgba(1, 9, 24, 0.76);
+  padding: 40px 55px 45px 55px;
+  /* border-radius: 50px; */
+  transition: all .3s;
+}
+.auth-inner-signup {
+  width: 450px;
+  margin: 200px 2px 130px -7px;;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(1, 9, 24, 0.76);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all .3s;
+}
+.auth-inner-signin{
+  width: 450px;
+  margin: 200px 2px 260px -7px;;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(1, 9, 24, 0.76);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all .3s;
+}
+.auth-inner-home {
+  width: 300px;
+  margin-bottom: 12px;
+  margin-left: -160px;
+  background: #f3f3f3;
+  box-shadow: 0px 14px 80px rgba(29, 29, 25, 0.76);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all .3s;
+  color: #326ba0;
+}
+.rootAuth{
+  display: flex;
+}
+.rootAuthSignUp{
+  display: flex;
+  margin-left: 12%;
+}
+.imageContainerAuthPage{
+  padding-left: 80px;
+  padding-right: 0%;
+  width: 30%;
+}
+
+.reportIcon{
+  width: 300px;
+  margin-top: 19%;
+}
+.advMan{
+  width: 280px;
+  margin: auto;
+
+}
+.signupImg{
+  width: 250%;
+}
+.profileImg{
+  width: 96px;
+  margin-top: 5%;
+  margin-left: 5%;
 }
 .imgForForm{
   width: 96px;
   margin: auto;
 }
+.imgForFormHome{
+  width: 99px;
+  margin-left: 35%;
+}
 .formHeader{
   display: flex;
+}
+.homeformHeader{
+  display: inline;
 }
 .auth-wrapper .form-control:focus {
   border-color: #167bff;
@@ -55,6 +143,36 @@ body, html, .App, #root, .auth-wrapper {
 }
 .custom-control-label {
   font-weight: 400;
+}
+.home{
+  display: inline;
+}
+.homePageText{
+  color: rgb(255, 255, 255);
+  margin-left: 12%;
+
+}
+.homeCards{
+  display:flex;
+ 
+}
+.homecard{
+  width: 40%;
+  padding-right: 10em;
+}
+.aboutcard{
+  width: 30%;
+  margin-right: 30px;
+  height: 400px;
+}
+.cardsContent{
+  display: inline;
+  margin: 5%;
+  width: 30%
+  
+}
+.my-mb-3{
+  align-content: center;
 }
 .forgot-password,
 .forgot-password a {
@@ -78,10 +196,12 @@ div.container-user {
 }
 
 div.user-profile  {
-  background-color: white;
+  background-color:rgb(34 100 160);
   padding: 2em 1em;
-  margin: auto;
-  width: 400px;
+  margin-left: -48%;
+  margin-top: -48%;
+  width: 420px;
+  height: 480px;
   border-radius: 1em;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.205);
 }
@@ -121,6 +241,12 @@ h2 {
   font-size: medium;
   margin: inherit;
 }
+h3,h5 {
+  display: inline;
+  font-weight: bold;
+  font-size: medium;
+  margin: inherit;
+}
 
 input[type="color"] {
   position: relative;
@@ -140,3 +266,68 @@ input[type="color"] {
 /* button:hover {
   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.356);
 } */
+.homesmall{
+  color: rgb(255 255 255);
+  background-color: rgb(62 104 182);
+}
+.mysmall{
+  color: rgb(255 255 255);
+  background-color: rgb(62 104 182);
+  display: block;
+  margin-left: 15%; 
+}
+.d-grid{
+  border-radius: 15px;
+  
+}
+.my-mb-3{
+  /* margin-left:40%; */
+  margin-bottom: 1rem!important;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.myform-control{
+  width: 67%;
+  display: unset;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.myform-select{
+  width: 67%;
+  display: unset;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.profileButton{
+  width: 67%;
+  display: unset;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

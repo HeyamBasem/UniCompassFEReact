@@ -57,7 +57,7 @@ function User() {
                 {
                     editMode
                         ? <>
-                            <h1>My Profile</h1>
+                            {/* <h1>My Profile</h1> */}
                             <EditableUserProfile
                                     stored={stored}
                                     editCompleteCallback={handleEditComplete}                            
@@ -67,7 +67,7 @@ function User() {
                             {
                                 isBirthdayToday
                                     ? <div className="birthday">Happy Birthday!</div>
-                                    : <h1>My Profile</h1>
+                                    : <h3>User Information</h3>
                             }
                             <UserProfile
                                     stored={stored}

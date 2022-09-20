@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 // import comp.ico from '../../../public'
-import cForm from '../util/cForm.png';
+import cForm from '../util/cForm2.png';
 export default class UserProfile extends Component {
     render() {
         return (
             <div className="auth-inner">
             <form>
             <div className="formHeader">
-            <img src={cForm} alt="cForm.png" className="imgForForm" />;
+            <img src={cForm} alt="cForm.png" className="imgForForm" />
               <h3 align="right"><i>Your Personal Uni Compass</i></h3>
              
             </div>
