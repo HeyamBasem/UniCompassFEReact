@@ -1,11 +1,39 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 // import comp.ico from '../../../public'
 import cForm from '../util/cForm2.png';
-export default class UserProfile extends Component {
-    render() {
-        return (
+export default function UserProfile() {
+  const initalData = {
+  courseName:'',
+  mark:'A',
+  repeated: 'Yes',
+  hardness: '1',
+  time: '1',
+  pressure: '1',
+}
+  const [data,setData] = useState({
+    courseName:'',
+    mark:'A',
+    repeated: 'Yes',
+    hardness: '1',
+    time: '1',
+    pressure: '1',
+  })
+  
+  const { courseName, mark, repeated, hardness, time, pressure } = data;
+  
+  const changeHandler = e => {
+    setData({...data,[e.target.name]:[e.target.value]});
+  }
+  
+  const submitHandler = e => {
+    console.log('courses form :))))');
+    e.preventDefault();
+    console.log(data);
+    setData(initalData);
+  }
+  return (
             <div className="auth-inner-course">
-            <form>
+            <form onSubmit={submitHandler}>
             <div className="formHeader">
             <img src={cForm} alt="cForm.png" className="imgForForm" />
               <h3 align="right"><i>Your Personal Uni Compass</i></h3>
@@ -14,12 +42,12 @@ export default class UserProfile extends Component {
             <h6 align="center">Please Fill Your Course info to Improve Uni Compass Analytics Result</h6>
               <div className="mb-3">
                 <label>Course name</label>
-                <input type="text" className="form-control" placeholder="Course name" />
+                <input name="courseName" value={courseName} onChange={changeHandler} type="text" className="form-control" placeholder="Course name" />
               </div>
               <div className="mb-3">
                 <label>Mark</label>
                 <div>
-                <select >
+                <select name="mark" value={mark} onChange={changeHandler}>
                     <option value="a">A</option>
                     <option value="a-">A-</option>
                     <option value="b+">B+</option>
@@ -38,7 +66,7 @@ export default class UserProfile extends Component {
               <div className="mb-3">
                 <label>Repeated ? <br/></label>
                 <div>
-                <select >
+                <select name="repeated" value={repeated} onChange={changeHandler} >
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                 </select>
@@ -47,7 +75,7 @@ export default class UserProfile extends Component {
               <div className="mb-3">
                 <label>Hardness rate from 1 as minimum to 10 as maximum value:</label>
                 <div>
-                <select >
+                <select name="hardness" value={hardness} onChange={changeHandler}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -65,7 +93,7 @@ export default class UserProfile extends Component {
               <div className="mb-3">
                 <label>How much u spent time in studying it:</label>
                 <div>
-                <select >
+                <select name="time" value={time} onChange={changeHandler}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -83,7 +111,7 @@ export default class UserProfile extends Component {
               <div className="mb-3">
                 <label>What was the pressure level during your study of this subject?:</label>
                 <div>
-                <select >
+                <select name="pressure" value={pressure} onChange={changeHandler}>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -104,15 +132,15 @@ export default class UserProfile extends Component {
                 </button>
               </div>
               <div><label></label></div>
-              <div className="d-grid">
+              {/* <div className="d-grid">
                 <button type="submit" className="btn btn-primary">
                   Finish
                 </button>
-              </div>
+              </div> */}
             </form>
           </div>
         )
-      }
+      
 }
 
   

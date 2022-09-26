@@ -1,16 +1,33 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import cForm from '../util/cForm2.png'; 
 import pngwing from '../util/pngwing.com.png'
 
-export default class SignUp extends Component {
-  render() {
-    return (
+export default function SignUp() {
+  const [data,setData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: ""
+  })
+  
+  const {firstname,lastname,email,password} = data;
+  
+  const changeHandler = e => {
+    setData({...data,[e.target.name]:[e.target.value]});
+  }
+  
+  const submitHandler = e => {
+    console.log('test');
+    e.preventDefault();
+    console.log(data);
+  }
+  return (
       <div className='rootAuthSignUp'>
         <div className='imageContainerAuthPage'>
           <img src={pngwing} alt="pngwing.com.png" className="signupImg" />
         </div>
         <div className="auth-inner-signup">
-          <form align='left'>
+          <form align='left' onSubmit={submitHandler}>
             <div className="formHeader">
               <img src={cForm} alt="cForm.png" className="imgForForm" />
               <h3 align="right"><i> Sign UP <br/><br/>Uni Compass</i></h3>
@@ -18,6 +35,9 @@ export default class SignUp extends Component {
             <div className="mb-3">
               <label>First name</label>
               <input
+                name="firstname" 
+                value={firstname}
+                onChange={changeHandler}
                 type="text"
                 className="form-control"
                 placeholder="First name"
@@ -25,11 +45,21 @@ export default class SignUp extends Component {
             </div>
             <div className="mb-3">
               <label>Last name</label>
-              <input type="text" className="form-control" placeholder="Last name" />
+              <input 
+                name="lastname" 
+                value={lastname}
+                onChange={changeHandler}
+                type="text" 
+                className="form-control" 
+                placeholder="Last name" 
+              />
             </div>
             <div className="mb-3">
               <label>Email address</label>
               <input
+                name="email" 
+                value={email}
+                onChange={changeHandler}
                 type="email"
                 className="form-control"
                 placeholder="Enter email"
@@ -38,6 +68,9 @@ export default class SignUp extends Component {
             <div className="mb-3">
               <label>Password</label>
               <input
+                name="password" 
+                value={password} 
+                onChange={changeHandler}
                 type="password"
                 className="form-control"
                 placeholder="Enter password"
@@ -56,5 +89,4 @@ export default class SignUp extends Component {
       
       </div>
     )
-  }
 }

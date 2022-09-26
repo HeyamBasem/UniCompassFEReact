@@ -27,6 +27,7 @@ export default class Home extends Component {
   handleSubmit = evt => {
     const { name, shareholders } = this.state;
     alert(`Incorporated: ${name} with ${shareholders.length} shareholders`);
+    console.log(`Incorporated: ${name} with ${shareholders.length} shareholders`)
   };
 
   handleAddShareholder = () => {
