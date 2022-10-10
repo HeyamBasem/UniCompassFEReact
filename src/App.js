@@ -4,14 +4,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Login from './components/auth/login'
 import SignUp from './components/auth/signup'
-// import AddCourse from  './components/pages/addCourse' 
-// import CoursesList from './components/pages/courses-list'
-// import Course from './components/pages/course'
-// import UserProfile from './components/pages/userProfile'
-// import User from './components/user/index.js'
-// import Home from './components/pages/home.js'
 import HomePage from './components/pages/homePage.js'
-// import UserProfile from './components/pages/userProfile.js'
 import Profile from './components/pages/profile'
 
 function App() {
@@ -61,8 +54,6 @@ function App() {
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
               <Route path="/userProfile" element={<Profile />} />
-              {/* <Route path="/home" element={<Home/>} /> */}
-              {/* <Route path="/userForm" element={<User />} /> */}
               <Route path="/homepage" element={<HomePage />} />
             </Routes>
           </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import tech from '../util/tech.png'
 import profile from '../util/profile.png'
-import UserProfile from "./userProfile";
+import UserProfileCourses from "./userProfileCourses";
 import User from "../user/index"
 import Notify from "./notify";
 export default class Profile extends Component {
@@ -21,15 +21,9 @@ export default class Profile extends Component {
                 <div className="userCard">
                 <Notify/>
                 </div>
-                {/* <div className="auth-inner-home">
-                &#128171;Contact us.
-                </div>
-                <div className="auth-inner-home">
-                &#128171;Borrow Book.
-                </div> */}
               </div>
               <div className='homecard'>
-                <UserProfile/>
+                <UserProfileCourses/>
               </div>
               <div className='aboutcard' >
                 <div className='imageContainerProfile'>
