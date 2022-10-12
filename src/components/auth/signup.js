@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import cForm from '../util/cForm2.png'; 
 import pngwing from '../util/pngwing.com.png';
 import axios from "axios";
+import { useNavigate} from 'react-router-dom';
+
 
 export default function SignUp() {
   const [data,setData] = useState({
@@ -15,7 +17,8 @@ export default function SignUp() {
   const changeHandler = e => {
     setData({...data,[e.target.name]:[e.target.value]});
   }
-  
+  const navigate = useNavigate();
+
   const submitHandler = async (e) => {
     data.full_name= full_name.toString();
     data.email = email.toString();
@@ -24,6 +27,7 @@ export default function SignUp() {
     e.preventDefault();
     try {
       const res = await axios.post("https://squid-app-j7kro.ondigitalocean.app/register/", data)
+      if (res) navigate('/');
       console.log({res});
       console.log("after response signup")
     } catch (e) {
