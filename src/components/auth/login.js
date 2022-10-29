@@ -1,9 +1,7 @@
 import React,{useState} from 'react';
 import pngwing from '../util/pngwing.com.png'
-import cForm from '../util/cForm2.png';  
-// import Profile from '../pages/profile'
+import cForm from '../util/cForm2.png';
 import axios from "axios";
-// import {  Routes, Route } from 'react-router-dom'
 
 
 import { useNavigate} from 'react-router-dom';
@@ -15,9 +13,9 @@ export default function Login() {
     username:"",
     password:""
   })
-  
+
   const {username,password} = data;
-  
+
   const changeHandler = e => {
     setData({...data,[e.target.name]:[e.target.value]});
   }
@@ -34,7 +32,7 @@ export default function Login() {
       console.log({res});
       console.log("after response ",res.data === 1)
       if (res.data === 1) navigate('/userProfile',{username: data.username});
-      
+
     } catch (e) {
       console.log("-----------------------------------");
       console.log(e);
@@ -55,7 +53,7 @@ export default function Login() {
           <div className="mb-3">
             <label>Email address</label>
             <input
-              name="username" 
+              name="username"
               value={username}
               onChange={changeHandler}
               type="text"
@@ -66,8 +64,8 @@ export default function Login() {
           <div className="mb-3">
             <label>Password</label>
             <input
-              name="password" 
-              value={password} 
+              name="password"
+              value={password}
               onChange={changeHandler}
               type="password"
               className="form-control"
@@ -98,5 +96,5 @@ export default function Login() {
         </div>
       </div>
     )
-  
+
 }
