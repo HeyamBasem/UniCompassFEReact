@@ -7,15 +7,25 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
-      courses: [{ name: "" }]
+      // student: "",
+      total_hours: "",
+      type: "",
+      name:"",
+      courses: [ {name:""} ]
     };
   }
 
   handleNameChange = evt => {
     this.setState({ name: evt.target.value });
   };
+  handleTypeChange = evt => {
+    this.setState({ type: evt.target.value });
+  };
+  handleTotalChange = evt => {
+    this.setState({ total_hours: evt.target.value });
+  };
 
+  
   handleShareholderNameChange = idx => evt => {
     const newCourses = this.state.courses.map((shareholder, sidx) => {
       if (idx !== sidx) return shareholder;
@@ -29,14 +39,20 @@ export default class Home extends Component {
     console.log('firstLIne ');
     evt.preventDefault();
     try{
-    // const { name, courses } = this.state;
-    const data = {student:'هيام', type:'first', total_hours: '9', course_name:['مختبر تطبيقات الحاسوب','مختبر تطبيقات الحاسوب']};
+    console.log(this.state)
+    const {type, total_hours, courses } = this.state;
+    const course_name = courses.map(object => object.name);
+    console.log(course_name);
+    const data = {student:'هيام', type:type, total_hours:total_hours, course_name:course_name};
     // const data = ['هيام', 'first',  9, ['مختبر تطبيقات الحاسوب','القياسات والاجهزة']];
 // 
     console.log('my data', data)
     const res =  await axios.post("https://squid-app-j7kro.ondigitalocean.app/semester_courses/", data);
     // const res = {'course1':1, 'course2': 2}
-    // alert(`Your Result for the ${name} semester with ${courses.length} courses:${res}`);
+    // const alertData = Object.keys(res.data).map(key => ( 
+    //   <li>{res.data[key].name}</li> ));
+    const myJSON = JSON.stringify(res.data);
+    alert(`Your Result for the this semester:${myJSON}`);
     console.log("after",res.data)
   }catch(e){
     console.log(e);
@@ -73,8 +89,8 @@ export default class Home extends Component {
           <br/>
             <select 
             className='myform-select'
-            value={this.state.name}
-            onChange={this.handleNameChange}>
+            value={this.state.type}
+            onChange={this.handleTypeChange}>
               <option value="summer">Summer</option>
               <option value="second">Second</option>
               <option  defaultValue="first">First</option>
@@ -82,9 +98,9 @@ export default class Home extends Component {
           </div>
           <div className="my-mb-3">
             <label>&#10043;Total courses hours:</label>
-            <input type="text" className="myform-control" placeholder="9" />
+            <input value={this.state.total_hours} onChange={this.handleTotalChange} type="text" className="myform-control" placeholder="9" />
           </div>
-          {/* <div className="my-mb-3">
+          <div className="my-mb-3">
             <label>&#10043;Courses:</label>
             {this.state.courses.map((shareholder, idx) => (
           <div className="shareholder">
@@ -111,7 +127,7 @@ export default class Home extends Component {
         >
           Add Course
         </button>
-          </div> */}
+          </div>
           
           <div className="d-grid">
             <button type="submit" className="btn btn-primary">

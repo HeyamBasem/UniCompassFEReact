@@ -6,32 +6,32 @@ import axios from "axios";
 //TODD get name from get function u will define 
 export default function UserProfileCourses() {
   const initalData = {
-  student: 'هيام',//todo get from profile
-  course_name:'مختبر تطبيقات الحاسوب', //todo get  from profile
-  mark:'4',
-  repeated: ' False',
-  hardness: '1',
-  studying_time: '1',
-  pressure_level: '1',
-  semester: 'first'
+  student: '',//todo get from profile
+  course_name:'', //todo get  from profile
+  mark:'',
+  repeated: '',
+  hardness: '',
+  studying_time: '',
+  pressure_level: '',
+  semester: ''
 }
   const [data,setData] = useState({
-    // student: 'Heyam',
-    // course_name:'',
-    // mark:'',
-    // repeated: '',
+    student: '',
+    course_name: '',
+    mark: '',
+    repeated: '',
+    hardness: '',
+    studying_time: '',
+    pressure_level: '',
+    semester: ''
+    // student: 'هيام',//todo get from profile
+    // course_name:'مختبر تطبيقات الحاسوب', //todo get  from profile
+    // mark:'4',
+    // repeated: false,
     // hardness: '1',
     // studying_time: '1',
     // pressure_level: '1',
     // semester: 'first'
-    student: 'هيام',//todo get from profile
-  course_name:'مختبر تطبيقات الحاسوب', //todo get  from profile
-  mark:'4',
-  repeated: false,
-  hardness: '1',
-  studying_time: '1',
-  pressure_level: '1',
-  semester: 'first'
   })
   
   const { course_name, mark, repeated, hardness, studying_time, pressure_level } = data;
@@ -46,7 +46,8 @@ export default function UserProfileCourses() {
     try {
           const res = await axios.post("https://squid-app-j7kro.ondigitalocean.app/course_info/", data)
           console.log({res});
-          console.log("after response")
+          console.log("after response");
+          if (res)alert(`Thanks for filling more data!`);
         } catch (e) {
           console.log("-----------------------------------");
           console.log(e);

@@ -1,7 +1,12 @@
 import React,{useState} from 'react';
 import pngwing from '../util/pngwing.com.png'
 import cForm from '../util/cForm2.png';  
+// import Profile from '../pages/profile'
 import axios from "axios";
+// import {  Routes, Route } from 'react-router-dom'
+
+
+import { useNavigate} from 'react-router-dom';
 
 
 
@@ -16,7 +21,8 @@ export default function Login() {
   const changeHandler = e => {
     setData({...data,[e.target.name]:[e.target.value]});
   }
-  
+  const navigate = useNavigate();
+
   const submitHandler = async (e) => {
     data.username = username.toString();
     data.password = password.toString();
@@ -26,7 +32,9 @@ export default function Login() {
     try {
       const res = await axios.post("https://squid-app-j7kro.ondigitalocean.app/login/", data)
       console.log({res});
-      console.log("after response")
+      console.log("after response ",res.data === 1)
+      if (res.data === 1) navigate('/userProfile',{username: data.username});
+      
     } catch (e) {
       console.log("-----------------------------------");
       console.log(e);
