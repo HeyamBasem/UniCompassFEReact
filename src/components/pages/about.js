@@ -1,4 +1,3 @@
-// import { Dropdown } from 'bootstrap'
 import React, { Component } from 'react'
 import cForm from '../util/cForm2.png';
 
@@ -20,9 +19,9 @@ export default class About extends Component {
           <label> &#10043; &#10043;&#10043;</label>
           <br/>
            <p>We are a group of University of Jordan students,
-            Inspired by our experience with the difficulty of registering university 
+            Inspired by our experience with the difficulty of registering university
             schedules that suit our abilities and circumstances in each semester we developed UniCompass.
-            It is a site that relies mainly on artificial intelligence technology to evaluate the study schedules 
+            It is a site that relies mainly on artificial intelligence technology to evaluate the study schedules
             registered for each student on the basis of difficulty and number of study hours,
             and to predict the expected grades for each subject that will be recorded within the chosen university schedule.
             </p>

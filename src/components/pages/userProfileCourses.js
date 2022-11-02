@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-// import comp.ico from '../../../public'
 import cForm from '../util/cForm2.png';
 import axios from "axios";
 
-//TODD get name from get function u will define 
+//TODD get name from get function u will define
 export default function UserProfileCourses() {
   const initalData = {
   student: '',//todo get from profile
@@ -24,35 +23,23 @@ export default function UserProfileCourses() {
     studying_time: '',
     pressure_level: '',
     semester: ''
-    // student: 'هيام',//todo get from profile
-    // course_name:'مختبر تطبيقات الحاسوب', //todo get  from profile
-    // mark:'4',
-    // repeated: false,
-    // hardness: '1',
-    // studying_time: '1',
-    // pressure_level: '1',
-    // semester: 'first'
   })
-  
+
   const { course_name, mark, repeated, hardness, studying_time, pressure_level } = data;
-  
+
   const changeHandler = e => {
     setData({...data,[e.target.name]:[e.target.value]});
   }
-  
+
   const submitHandler = async (e) => {
     console.log('courses form :))))');
     e.preventDefault();
     try {
           const res = await axios.post("https://squid-app-j7kro.ondigitalocean.app/course_info/", data)
-          console.log({res});
-          console.log("after response");
           if (res)alert(`Thanks for filling more data!`);
         } catch (e) {
-          console.log("-----------------------------------");
           console.log(e);
       }
-    console.log(data);
     setData(initalData);
 
   }
@@ -62,7 +49,7 @@ export default function UserProfileCourses() {
             <div className="formHeader">
             <img src={cForm} alt="cForm.png" className="imgForForm" />
               <h3 align="right"><i>Your Personal Uni Compass</i></h3>
-             
+
             </div>
             <h6 align="center">Please Fill Your Course info to Improve Uni Compass Analytics Result</h6>
               <div className="mb-3">
@@ -158,17 +145,12 @@ export default function UserProfileCourses() {
                 </button>
               </div>
               <div><label></label></div>
-              {/* <div className="d-grid">
-                <button type="submit" className="btn btn-primary">
-                  Finish
-                </button>
-              </div> */}
             </form>
           </div>
         )
-      
+
 }
 
-  
+
 
 

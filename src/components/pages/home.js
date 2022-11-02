@@ -1,4 +1,3 @@
-// import { Dropdown } from 'bootstrap'
 import React, { Component } from 'react'
 import cForm from '../util/cForm2.png';
 import axios from "axios";
@@ -25,7 +24,7 @@ export default class Home extends Component {
     this.setState({ total_hours: evt.target.value });
   };
 
-  
+
   handleShareholderNameChange = idx => evt => {
     const newCourses = this.state.courses.map((shareholder, sidx) => {
       if (idx !== sidx) return shareholder;
@@ -44,13 +43,8 @@ export default class Home extends Component {
     const course_name = courses.map(object => object.name);
     console.log(course_name);
     const data = {student:'هيام', type:type, total_hours:total_hours, course_name:course_name};
-    // const data = ['هيام', 'first',  9, ['مختبر تطبيقات الحاسوب','القياسات والاجهزة']];
-// 
     console.log('my data', data)
     const res =  await axios.post("https://squid-app-j7kro.ondigitalocean.app/semester_courses/", data);
-    // const res = {'course1':1, 'course2': 2}
-    // const alertData = Object.keys(res.data).map(key => ( 
-    //   <li>{res.data[key].name}</li> ));
     const myJSON = JSON.stringify(res.data);
     alert(`Your Result for the this semester:${myJSON}`);
     console.log("after",res.data)
@@ -73,9 +67,8 @@ export default class Home extends Component {
   render() {
     return (
         <div className="auth-inner-homePage">
-          {/* list of courses ,which smester  */}
           <form onSubmit={this.handleSubmit}>
-          
+
           <div className="homeformHeader">
           <img src={cForm} alt="cForm.png" className="imgForFormHome" />
               <br/><br/>
@@ -87,7 +80,7 @@ export default class Home extends Component {
           <div className="my-mb-3">
           <label> &#10043;Semester Type:</label>
           <br/>
-            <select 
+            <select
             className='myform-select'
             value={this.state.type}
             onChange={this.handleTypeChange}>
@@ -128,7 +121,7 @@ export default class Home extends Component {
           Add Course
         </button>
           </div>
-          
+
           <div className="d-grid">
             <button type="submit" className="btn btn-primary">
               Get My Result

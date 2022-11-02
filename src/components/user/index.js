@@ -47,21 +47,20 @@ function User() {
             setMonth(result.month);
             setDay(result.day);
             setColor(result.color);
-        }        
+        }
         setEditMode(false);
     }
 
     return (
         <>
         <div className="container-user">
-            <div className="user-profile">                 
+            <div className="user-profile">
                 {
                     editMode
                         ? <>
-                            {/* <h1>My Profile</h1> */}
                             <EditableUserProfile
                                     stored={stored}
-                                    editCompleteCallback={handleEditComplete}                            
+                                    editCompleteCallback={handleEditComplete}
                             />
                         </>
                         : <>
@@ -75,9 +74,9 @@ function User() {
                                     startEditCallback={() => setEditMode(true)}
                             />
                         </>
-                }            
+                }
             </div>
-         </div> 
+         </div>
         </>
         );
 }

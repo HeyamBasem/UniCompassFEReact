@@ -27,8 +27,6 @@ export default function EditableUserProfile({
     const [name, setName] = useState(stored.name);
     const [month, setMonth] = useState(stored.month);
     const [day, setDay] = useState(stored.day);
-    // const [color, setColor] = useState(stored.color);
-
     const maxDay = months.getMaxDays(month);
 
     function handleCancelClicked() {
@@ -48,21 +46,18 @@ export default function EditableUserProfile({
         // backgroundColor: color,
         // color: calcButtonTextColor(color)
     };
-
-    // calcButtonTextColor(color);
-
     return <>
-        <Group>            
+        <Group>
             <h5>Name:</h5>
             <input
                 type='text'
                 value={name}
                 onChange={e => setName(e.target.value)}
-            />            
+            />
         </Group>
-        <Group>            
-            <h5>Birthday:</h5>            
-            
+        <Group>
+            <h5>Birthday:</h5>
+
             <select
                 value={month}
                 onChange={e => setMonth(bound(e.target.value, 0, 11))}
@@ -76,14 +71,6 @@ export default function EditableUserProfile({
                 style={{width: "50px"}}
             />
         </Group>
-        {/* <Group>            
-            <h2>Favourite Color:</h2>
-            <input
-                type="color"
-                value={color}
-                onChange={e => setColor(e.target.value)}
-            />
-        </Group> */}
         <Group>
             <button style={buttonStyle} onClick={handleSaveClicked}>Save</button>
             <button style={buttonStyle} onClick={handleCancelClicked}>Cancel</button>

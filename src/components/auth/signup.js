@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import cForm from '../util/cForm2.png'; 
+import cForm from '../util/cForm2.png';
 import pngwing from '../util/pngwing.com.png';
 import axios from "axios";
 import { useNavigate} from 'react-router-dom';
@@ -7,8 +7,6 @@ import { useNavigate} from 'react-router-dom';
 
 export default function SignUp() {
   const [data,setData] = useState({
-      // firstName:"",
-      // lastName: "",
     full_name: "",
     email: "",
     password: ""
@@ -47,32 +45,21 @@ export default function SignUp() {
               <img src={cForm} alt="cForm.png" className="imgForForm" />
               <h3 align="right"><i> Sign UP <br/><br/>Uni Compass</i></h3>
             </div>
-            {/* <div className="mb-3">
-              <label>First name</label>
+            <div className="mb-3">
+              <label>full name</label>
               <input
-                name="firstname" 
-                value={firstName}
+                name="full_name"
+                value={full_name}
                 onChange={changeHandler}
                 type="text"
                 className="form-control"
-                placeholder="First name"
-              />
-            </div> */}
-            <div className="mb-3">
-              <label>full name</label>
-              <input 
-                name="full_name" 
-                value={full_name}
-                onChange={changeHandler}
-                type="text" 
-                className="form-control" 
-                placeholder="Last name" 
+                placeholder="Last name"
               />
             </div>
             <div className="mb-3">
               <label>Email address</label>
               <input
-                name="email" 
+                name="email"
                 value={email}
                 onChange={changeHandler}
                 type="email"
@@ -83,8 +70,8 @@ export default function SignUp() {
             <div className="mb-3">
               <label>Password</label>
               <input
-                name="password" 
-                value={password} 
+                name="password"
+                value={password}
                 onChange={changeHandler}
                 type="password"
                 className="form-control"
@@ -101,7 +88,7 @@ export default function SignUp() {
             </p>
           </form>
         </div>
-      
+
       </div>
     )
 }
